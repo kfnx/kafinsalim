@@ -17,6 +17,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Portfolio() {
   return (
@@ -51,6 +52,7 @@ export default function Portfolio() {
             </Link>
           </nav>
           <div className="flex gap-3">
+            <ThemeToggle />
             <Button variant="ghost" size="icon" asChild>
               <Link
                 href="https://github.com/kfnx"
@@ -80,7 +82,7 @@ export default function Portfolio() {
         <section className="py-12 md:py-20 flex flex-col items-center text-center">
           <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-6">
             <img
-              src="https://cdn.discordapp.com/attachments/748172468291764256/1347511407368867841/1676120951772.png?ex=67cc174b&is=67cac5cb&hm=f4a98009682f78b65015885726f17041cc9512ccc5c584f6c1b085b9fd60dcae&format=webp&quality=lossless&width=1152&height=1152"
+              src="/kafin-ghiblified.png"
               alt="Kafin Salim"
               className="w-full h-full object-cover"
             />
