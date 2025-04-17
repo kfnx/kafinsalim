@@ -61,3 +61,84 @@
   }
 }
 
+/* Animation Utilities */
+@layer utilities {
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+  
+  .animate-delay-600 {
+    animation-delay: 600ms;
+  }
+  
+  .animate-delay-700 {
+    animation-delay: 700ms;
+  }
+  
+  .animate-delay-800 {
+    animation-delay: 800ms;
+  }
+  
+  .animate-fill-forwards {
+    animation-fill-mode: forwards;
+  }
+}
+
+/* Custom Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transition: opacity 0.6s, transform 0.6s;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.fade-up {
+  transform: translateY(30px);
+}
+
+.scale-in-effect {
+  transform: scale(0.9);
+}
+
+/* Apply smooth scrolling animations */
+[data-animate="fade-up"] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+[data-animate="fade-in"] {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+[data-animate="scale-in"] {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+[data-animate].in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
