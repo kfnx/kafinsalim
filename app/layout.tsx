@@ -1,13 +1,14 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto_Slab } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ParticlesBackground } from "@/components/particles-background";
 
-const inter = Inter({ subsets: ["latin"] });
+const robotoSlab = Roboto_Slab({ subsets: ["latin"], weight: ["300"] });
 
 export const metadata: Metadata = {
-  title: "Kafin Salim | Software Engineer",
-  description: "Experienced Software Engineer with expertise in full-stack development",
+  title: "Kafin Salim | Full Stack Developer",
+  description: "Frontend focused Full-stack developer",
   generator: "v0.dev",
 };
 
@@ -51,9 +52,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={robotoSlab.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+          <ParticlesBackground />
+          <div style={{ position: "relative", zIndex: 1 }}>{children}</div>
         </ThemeProvider>
       </body>
     </html>
