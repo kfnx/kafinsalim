@@ -1,31 +1,25 @@
 import Link from "next/link";
 import {
+  ChevronDown,
+  ExternalLink,
   Github,
   Linkedin,
   Mail,
-  ExternalLink,
-  MessageCircle,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  CardFooter,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ScrollAnimationWrapper } from "@/components/scroll-animation-wrapper";
+import { SkillCard } from "@/components/skill-card";
+import { ProjectCard } from "@/components/project-card";
+import { TypedRole } from "@/components/title";
 
 export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
         <div className="container flex h-16 items-center justify-between">
-          <div className="font-bold text-xl">Kafin Salim</div>
+          <div className="font-bold text-xl">kafin.dev</div>
           <nav className="hidden md:flex gap-6">
             <Link
               href="#about"
@@ -80,8 +74,8 @@ export default function Portfolio() {
 
       <main className="container py-10 md:py-16">
         {/* Hero Section */}
-        <section className="py-12 md:py-20 flex flex-col items-center text-center">
-          <ScrollAnimationWrapper animation="scale-in" threshold={0.2}>
+        <section className="py-12 md:py-20 flex flex-col items-center text-center h-screen relative space-y-4">
+          <ScrollAnimationWrapper animation="scale-in" threshold={0.25}>
             <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-6">
               <img
                 src="/kafin-ghiblified.png"
@@ -90,29 +84,31 @@ export default function Portfolio() {
               />
             </div>
           </ScrollAnimationWrapper>
-          
-          <ScrollAnimationWrapper animation="fade-in-up" delay={100} threshold={0.2}>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-              Kafin Salim
+
+          <ScrollAnimationWrapper
+            animation="fade-in-up"
+            delay={150}
+            threshold={0.25}
+          >
+            <h1 className="text-3xl font-bold tracking-tight">
+              Hi, I’m Kafin 👋
             </h1>
           </ScrollAnimationWrapper>
-          
-          <ScrollAnimationWrapper animation="fade-in-up" delay={150} threshold={0.2}>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-6">
-              Full Stack Software Engineer
-            </p>
+
+          <ScrollAnimationWrapper
+            animation="fade-in-up"
+            delay={150}
+            threshold={0.25}
+          >
+            <TypedRole />
           </ScrollAnimationWrapper>
-          
-          <ScrollAnimationWrapper animation="fade-in-up" delay={200} threshold={0.2}>
-            <p className="max-w-2xl text-muted-foreground mb-8">
-              I build user friendly, scalabe and performant applications with
-              cutting edge technologies. Passionate about performance optimization
-              and creating exceptional user experiences.
-            </p>
-          </ScrollAnimationWrapper>
-          
-          <ScrollAnimationWrapper animation="fade-in-up" delay={250} threshold={0.2}>
-            <div className="flex gap-4">
+
+          <ScrollAnimationWrapper
+            animation="fade-in-up"
+            delay={250}
+            threshold={0.25}
+          >
+            <div className="flex gap-4 pt-4">
               <Button asChild>
                 <Link href="#contact">Get in touch</Link>
               </Button>
@@ -121,6 +117,20 @@ export default function Portfolio() {
               </Button>
             </div>
           </ScrollAnimationWrapper>
+
+          <ScrollAnimationWrapper
+            animation="fade-in-up"
+            delay={250}
+            threshold={0.25}
+            className="relative"
+          >
+            <Link
+              href="#about"
+              className="absolute -bottom-32 left-1/2 -translate-x-1/2"
+            >
+              <ChevronDown className="h-14 w-14 text-muted-foreground animate-bounce opacity-50" />
+            </Link>
+          </ScrollAnimationWrapper>
         </section>
 
         {/* About Section */}
@@ -128,25 +138,33 @@ export default function Portfolio() {
           <ScrollAnimationWrapper threshold={0.1}>
             <h2 className="text-3xl font-bold mb-8">About Me</h2>
           </ScrollAnimationWrapper>
-          
+
           <div className="grid md:grid-cols-2 gap-10">
-            <ScrollAnimationWrapper animation="fade-in-up" delay={100} threshold={0.1}>
+            <ScrollAnimationWrapper
+              animation="fade-in-up"
+              delay={150}
+              threshold={0.1}
+            >
               <div>
                 <p className="text-muted-foreground mb-4">
-                  I'm a Software Engineer with extensive experience in full-stack
-                  development. <br />
+                  I'm a Software Engineer with extensive experience in
+                  full-stack development. <br />
                   My expertise spans across various technologies, allowing me to
                   build efficient solutions.
                 </p>
               </div>
             </ScrollAnimationWrapper>
-            
-            <ScrollAnimationWrapper animation="fade-in-up" delay={200} threshold={0.1}>
+
+            <ScrollAnimationWrapper
+              animation="fade-in-up"
+              delay={200}
+              threshold={0.1}
+            >
               <div className="space-y-4">
                 <p className="text-muted-foreground">
                   Throughout my career, I've held roles such as Principal
-                  Engineer, Fullstack Engineer, Frontend Engineer, Mobile Engineer
-                  and Database Administrator.
+                  Engineer, Fullstack Engineer, Frontend Engineer, Mobile
+                  Engineer and Database Administrator.
                 </p>
                 <p className="text-muted-foreground">
                   This diverse experience allows me to approach problems from
@@ -161,32 +179,48 @@ export default function Portfolio() {
         {/* Skills Section */}
         <section id="skills" className="py-12 md:py-20">
           <ScrollAnimationWrapper threshold={0.1}>
-            <h2 className="text-3xl font-bold mb-8">Skills & Technologies</h2>
+            <h2 className="text-3xl font-bold mb-8">Skills & Experiences</h2>
           </ScrollAnimationWrapper>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <ScrollAnimationWrapper animation="scale-in" delay={50} threshold={0.1}>
+            <ScrollAnimationWrapper
+              animation="scale-in"
+              delay={50}
+              threshold={0.1}
+            >
               <SkillCard
                 title="Frontend"
                 skills={["React", "Next.js", "TypeScript", "GraphQL", "Redux"]}
               />
             </ScrollAnimationWrapper>
-            
-            <ScrollAnimationWrapper animation="scale-in" delay={100} threshold={0.1}>
+
+            <ScrollAnimationWrapper
+              animation="scale-in"
+              delay={150}
+              threshold={0.1}
+            >
               <SkillCard
                 title="Backend"
                 skills={["Node.js", "Nest.js", "Go", "Rust", "GraphQL"]}
               />
             </ScrollAnimationWrapper>
-            
-            <ScrollAnimationWrapper animation="scale-in" delay={150} threshold={0.1}>
+
+            <ScrollAnimationWrapper
+              animation="scale-in"
+              delay={150}
+              threshold={0.1}
+            >
               <SkillCard
                 title="Database & DevOps"
                 skills={["PostgreSQL", "Docker", "Kubernetes", "AWS", "Linux"]}
               />
             </ScrollAnimationWrapper>
-            
-            <ScrollAnimationWrapper animation="scale-in" delay={200} threshold={0.1}>
+
+            <ScrollAnimationWrapper
+              animation="scale-in"
+              delay={200}
+              threshold={0.1}
+            >
               <SkillCard
                 title="Blockchain & Mobile"
                 skills={["Solana", "Ethereum", "Web3", "React Native"]}
@@ -198,55 +232,145 @@ export default function Portfolio() {
         {/* Projects Section */}
         <section id="projects" className="py-12 md:py-20">
           <ScrollAnimationWrapper threshold={0.1}>
-            <h2 className="text-3xl font-bold mb-8">Projects</h2>
+            <h2 className="text-3xl font-bold mb-8">Some of my works</h2>
           </ScrollAnimationWrapper>
-          
+
           <div className="grid md:grid-cols-2 gap-6">
-            <ScrollAnimationWrapper animation="fade-in-up" delay={50} threshold={0.1}>
+            <ScrollAnimationWrapper
+              animation="fade-in-up"
+              delay={100}
+              threshold={0.1}
+            >
+              <ProjectCard
+                title="Money Tracker"
+                description="An Experiment to see how far a web app can be built with AI tools"
+                technologies={["Lovable", "Supabase", "Cursor"]}
+                links={[
+                  {
+                    url: "https://lazy-money-tracker.lovable.app",
+                    icon: <ExternalLink className="h-4 w-4" />,
+                    label: "Live",
+                  },
+                ]}
+              />
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper
+              animation="fade-in-up"
+              delay={100}
+              threshold={0.1}
+            >
+              <ProjectCard
+                title="Tatsu.gg"
+                description="Dashboard to build and manage Tatsu community bot that serve more than 1,400,000 Discord servers"
+                technologies={["React", "Next.js", "GraphQL"]}
+                links={[
+                  {
+                    url: "https://tatsu.gg",
+                    icon: <ExternalLink className="h-4 w-4" />,
+                    label: "Live",
+                  },
+                ]}
+              />
+            </ScrollAnimationWrapper>
+
+            <ScrollAnimationWrapper
+              animation="fade-in-up"
+              delay={50}
+              threshold={0.1}
+            >
               <ProjectCard
                 title="Isometric map builder"
                 description="A prototype. features include: placing different types of props with different sizes and levels"
                 technologies={["React", "Pixi.js", "Zustand"]}
-                demoLink="https://isometric-map-builder.vercel.app"
+                links={[
+                  {
+                    url: "https://isometric-map-builder.vercel.app",
+                    icon: <ExternalLink className="h-4 w-4" />,
+                    label: "Live",
+                  },
+                ]}
               />
             </ScrollAnimationWrapper>
-            
-            <ScrollAnimationWrapper animation="fade-in-up" delay={100} threshold={0.1}>
+
+            <ScrollAnimationWrapper
+              animation="fade-in-up"
+              delay={150}
+              threshold={0.1}
+            >
               <ProjectCard
                 title="Tatsumeeko.com"
                 description="Front page of tatsumeeko, modern fantasy idle JRPG-lite that spans across Discord, Web, and Mobile, offering a unique blend of adventure"
                 technologies={["React", "Next.js", "Tailwind"]}
-                demoLink="https://tatsumeeko.com"
+                links={[
+                  {
+                    url: "https://tatsumeeko.com",
+                    icon: <ExternalLink className="h-4 w-4" />,
+                    label: "Live",
+                  },
+                ]}
               />
             </ScrollAnimationWrapper>
-            
-            <ScrollAnimationWrapper animation="fade-in-up" delay={150} threshold={0.1}>
+
+            <ScrollAnimationWrapper
+              animation="fade-in-up"
+              delay={150}
+              threshold={0.1}
+            >
               <ProjectCard
                 title="Meekolony NFT Collection"
                 description="Deployed an NFT collection on Solana blockchain, including smart contract development and frontend integration."
                 technologies={["Solana", "Web3", "React"]}
-                demoLink="https://apps.meekolony.com"
-                githubLink="https://magiceden.io/marketplace/meekolony"
+                links={[
+                  {
+                    url: "https://apps.meekolony.com",
+                    icon: <ExternalLink className="h-4 w-4" />,
+                    label: "Live",
+                  },
+                  {
+                    url: "https://magiceden.io/marketplace/meekolony",
+                    icon: <ExternalLink className="h-4 w-4" />,
+                    label: "Marketplace",
+                  },
+                ]}
               />
             </ScrollAnimationWrapper>
-            
-            <ScrollAnimationWrapper animation="fade-in-up" delay={200} threshold={0.1}>
+
+            <ScrollAnimationWrapper
+              animation="fade-in-up"
+              delay={200}
+              threshold={0.1}
+            >
               <ProjectCard
                 title="Pokedex Pintar"
                 description="Pokedex web app using framer motion for the animation"
                 technologies={["React", "Framer Motion", "GraphQL"]}
-                demoLink="https://pokedex-pintar.vercel.app/"
-                githubLink="https://github.com/kfnx/pokedex-pintar"
+                links={[
+                  {
+                    url: "https://pokedex-pintar.vercel.app/",
+                    icon: <ExternalLink className="h-4 w-4" />,
+                    label: "Live",
+                  },
+                ]}
               />
             </ScrollAnimationWrapper>
-            
-            <ScrollAnimationWrapper animation="fade-in-up" delay={250} threshold={0.1}>
+
+            <ScrollAnimationWrapper
+              animation="fade-in-up"
+              delay={250}
+              threshold={0.1}
+            >
               <ProjectCard
                 title="Curhat"
                 description="Twitter-like clone, using firebase for push notification"
                 technologies={["React", "Firebase", "Redux"]}
-                demoLink="https://generic-2f13b.web.app/"
-                githubLink="https://github.com/kfnx/curhat-react-firebase"
+                links={[
+                  {
+                    url: "https://generic-2f13b.web.app/",
+                    icon: <ExternalLink className="h-4 w-4" />,
+                    label: "Live",
+                  },
+                ]}
               />
             </ScrollAnimationWrapper>
           </div>
@@ -257,9 +381,13 @@ export default function Portfolio() {
           <ScrollAnimationWrapper threshold={0.1}>
             <h2 className="text-3xl font-bold mb-8">Get In Touch</h2>
           </ScrollAnimationWrapper>
-          
+
           <div className="grid md:grid-cols-2 gap-10">
-            <ScrollAnimationWrapper animation="fade-in-up" delay={100} threshold={0.1}>
+            <ScrollAnimationWrapper
+              animation="fade-in-up"
+              delay={150}
+              threshold={0.1}
+            >
               <div>
                 <p className="text-muted-foreground mb-6">
                   I'm currently open to new opportunities and collaborations.
@@ -298,33 +426,26 @@ export default function Portfolio() {
                       linkedin.com/in/kafinsalim
                     </a>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <MessageCircle className="h-5 w-5 text-muted-foreground" />
-                    <a
-                      href="https://t.me/fainks"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline"
-                    >
-                      t.me/fainks
-                    </a>
-                  </div>
                 </div>
               </div>
             </ScrollAnimationWrapper>
-            
-            <ScrollAnimationWrapper animation="fade-in-up" delay={200} threshold={0.1}>
+
+            <ScrollAnimationWrapper
+              animation="fade-in-up"
+              delay={200}
+              threshold={0.1}
+            >
               <div className="bg-card rounded-lg p-6 shadow-sm">
-                <h3 className="text-xl font-semibold mb-4">Send me a message</h3>
+                <h3 className="text-xl font-semibold mb-4">
+                  Send me a message
+                </h3>
                 <p className="text-muted-foreground mb-4">
-                  Feel free to reach out through any of the channels on the left or
-                  directly via email. I'm always interested in hearing about new
-                  projects and opportunities.
+                  Feel free to reach out through any of the channels on the left
+                  or directly via email. I'm always interested in hearing about
+                  new projects and opportunities.
                 </p>
                 <Button className="w-full" asChild>
-                  <a href="mailto:kafinsalim@gmail.com">
-                    Email Me
-                  </a>
+                  <a href="mailto:kafinsalim@gmail.com">Email Me</a>
                 </Button>
               </div>
             </ScrollAnimationWrapper>
@@ -371,72 +492,5 @@ export default function Portfolio() {
         </div>
       </footer>
     </div>
-  );
-}
-
-function SkillCard({ title, skills }: { title: string; skills: string[] }) {
-  return (
-    <Card className="h-full">
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="flex flex-wrap gap-2">
-          {skills.map((skill) => (
-            <Badge key={skill} variant="secondary">
-              {skill}
-            </Badge>
-          ))}
-        </div>
-      </CardContent>
-    </Card>
-  );
-}
-
-function ProjectCard({
-  title,
-  description,
-  technologies,
-  demoLink,
-  githubLink,
-}: {
-  title: string;
-  description: string;
-  technologies: string[];
-  demoLink: string;
-  githubLink?: string;
-}) {
-  return (
-    <Card className="h-full flex flex-col">
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
-      </CardHeader>
-      <CardContent className="flex-grow">
-        <div className="flex flex-wrap gap-2 mb-4">
-          {technologies.map((tech) => (
-            <Badge key={tech} variant="outline">
-              {tech}
-            </Badge>
-          ))}
-        </div>
-      </CardContent>
-      <CardFooter className="flex gap-3">
-        <Button variant="outline" size="sm" className="flex gap-2" asChild>
-          <Link href={demoLink} target="_blank" rel="noopener noreferrer">
-            <ExternalLink className="h-4 w-4" />
-            Demo
-          </Link>
-        </Button>
-        {githubLink && (
-          <Button variant="outline" size="sm" className="flex gap-2" asChild>
-            <Link href={githubLink} target="_blank" rel="noopener noreferrer">
-              <Github className="h-4 w-4" />
-              Code
-            </Link>
-          </Button>
-        )}
-      </CardFooter>
-    </Card>
   );
 }
