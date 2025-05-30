@@ -55,6 +55,11 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-image: url('/bg.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
   html {
     @apply scroll-smooth;

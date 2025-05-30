@@ -16,8 +16,8 @@ import { TypedRole } from "@/components/title";
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
+    <div className="min-h-screen">
+      <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur">
         <div className="container flex h-16 items-center justify-between">
           <div className="font-bold text-xl">kafin.dev</div>
           <nav className="hidden md:flex gap-6">
@@ -179,7 +179,7 @@ export default function Portfolio() {
         {/* Skills Section */}
         <section id="skills" className="py-12 md:py-20">
           <ScrollAnimationWrapper threshold={0.1}>
-            <h2 className="text-3xl font-bold mb-8">Skills & Experiences</h2>
+            <h2 className="text-3xl font-bold mb-8">Tech I work with</h2>
           </ScrollAnimationWrapper>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
