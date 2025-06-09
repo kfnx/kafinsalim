@@ -15,6 +15,8 @@ import { ProjectCard } from "@/components/project-card";
 import { TypedRole } from "@/components/title";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import { RetroGrid } from "@/components/magicui/retro-grid";
+import { AuroraText } from "@/components/magicui/aurora-text";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 
 export default function Portfolio() {
   return (
@@ -22,7 +24,12 @@ export default function Portfolio() {
       <RetroGrid />
       <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur">
         <div className="container flex h-16 items-center justify-between">
-          <div className="font-bold text-xl">kafin.dev</div>
+          <div className="font-bold text-2xl">
+            <AuroraText>
+              kafin.dev
+            </AuroraText>
+          </div>
+
           <nav className="hidden md:flex gap-6">
             <Link
               href="#about"
@@ -382,13 +389,8 @@ export default function Portfolio() {
 
         {/* Contact Section */}
         <section id="contact" className="py-12 md:py-20">
-          <ScrollAnimationWrapper threshold={0.1}>
-
-          </ScrollAnimationWrapper>
-
           <ScrollAnimationWrapper
             animation="fade-in-up"
-            delay={300}
             threshold={0.1}
           >
             <div className="grid md:grid-cols-2 gap-10">
@@ -410,17 +412,6 @@ export default function Portfolio() {
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Github className="h-5 w-5 text-muted-foreground" />
-                    <a
-                      href="https://github.com/kfnx"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline"
-                    >
-                      github.com/kfnx
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-3">
                     <Linkedin className="h-5 w-5 text-muted-foreground" />
                     <a
                       href="https://linkedin.com/in/kafinsalim"
@@ -435,14 +426,14 @@ export default function Portfolio() {
               </div>
               <div>
                 <div className="text-2xl font-bold mb-6">Send me a message</div>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-muted-foreground mb-8">
                   Feel free to reach out through any of the channels on the left
                   or directly via email. I'm always interested in hearing about
                   new projects and opportunities.
                 </p>
-                <Button className="w-full" asChild>
+                <InteractiveHoverButton>
                   <a href="mailto:kafinsalim@gmail.com">Email Me</a>
-                </Button>
+                </InteractiveHoverButton>
               </div>
             </div>
           </ScrollAnimationWrapper>
