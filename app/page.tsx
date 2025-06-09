@@ -13,6 +13,7 @@ import { ScrollAnimationWrapper } from "@/components/scroll-animation-wrapper";
 import { SkillCard } from "@/components/skill-card";
 import { ProjectCard } from "@/components/project-card";
 import { TypedRole } from "@/components/title";
+import { ScrollProgress } from "@/components/magicui/scroll-progress";
 
 export default function Portfolio() {
   return (
@@ -491,6 +492,8 @@ export default function Portfolio() {
           </div>
         </div>
       </footer>
+
+      <ScrollProgress className="top-[65px]" />
     </div>
   );
 }
