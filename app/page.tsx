@@ -14,10 +14,12 @@ import { SkillCard } from "@/components/skill-card";
 import { ProjectCard } from "@/components/project-card";
 import { TypedRole } from "@/components/title";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
+import { RetroGrid } from "@/components/magicui/retro-grid";
 
 export default function Portfolio() {
   return (
     <div className="min-h-screen">
+      <RetroGrid />
       <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur">
         <div className="container flex h-16 items-center justify-between">
           <div className="font-bold text-xl">kafin.dev</div>
@@ -48,7 +50,6 @@ export default function Portfolio() {
             </Link>
           </nav>
           <div className="flex gap-3">
-            <ThemeToggle />
             <Button variant="ghost" size="icon" asChild>
               <Link
                 href="https://github.com/kfnx"
@@ -69,13 +70,15 @@ export default function Portfolio() {
                 <span className="sr-only">LinkedIn</span>
               </Link>
             </Button>
+
+            <ThemeToggle />
           </div>
         </div>
       </header>
 
       <main className="container py-10 md:py-16">
         {/* Hero Section */}
-        <section className="py-12 md:py-20 flex flex-col items-center text-center h-screen relative space-y-4">
+        <section className="py-12 md:py-16 flex flex-col items-center text-center h-screen relative space-y-4">
           <ScrollAnimationWrapper animation="scale-in" threshold={0.25}>
             <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-6">
               <img
@@ -380,16 +383,17 @@ export default function Portfolio() {
         {/* Contact Section */}
         <section id="contact" className="py-12 md:py-20">
           <ScrollAnimationWrapper threshold={0.1}>
-            <h2 className="text-3xl font-bold mb-8">Get In Touch</h2>
+
           </ScrollAnimationWrapper>
 
-          <div className="grid md:grid-cols-2 gap-10">
-            <ScrollAnimationWrapper
-              animation="fade-in-up"
-              delay={150}
-              threshold={0.1}
-            >
+          <ScrollAnimationWrapper
+            animation="fade-in-up"
+            delay={300}
+            threshold={0.1}
+          >
+            <div className="grid md:grid-cols-2 gap-10">
               <div>
+                <div className="text-2xl font-bold mb-6">Get In Touch</div>
                 <p className="text-muted-foreground mb-6">
                   I'm currently open to new opportunities and collaborations.
                   Whether you have a question or just want to say hi, I'll do my
@@ -429,17 +433,8 @@ export default function Portfolio() {
                   </div>
                 </div>
               </div>
-            </ScrollAnimationWrapper>
-
-            <ScrollAnimationWrapper
-              animation="fade-in-up"
-              delay={200}
-              threshold={0.1}
-            >
-              <div className="bg-card rounded-lg p-6 shadow-sm">
-                <h3 className="text-xl font-semibold mb-4">
-                  Send me a message
-                </h3>
+              <div>
+                <div className="text-2xl font-bold mb-6">Send me a message</div>
                 <p className="text-muted-foreground mb-4">
                   Feel free to reach out through any of the channels on the left
                   or directly via email. I'm always interested in hearing about
@@ -449,8 +444,8 @@ export default function Portfolio() {
                   <a href="mailto:kafinsalim@gmail.com">Email Me</a>
                 </Button>
               </div>
-            </ScrollAnimationWrapper>
-          </div>
+            </div>
+          </ScrollAnimationWrapper>
         </section>
       </main>
 
