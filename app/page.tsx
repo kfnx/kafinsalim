@@ -17,6 +17,7 @@ import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import { RetroGrid } from "@/components/magicui/retro-grid";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
+import { ChatbotProvider } from "@/components/chatbot-provider";
 
 export default function Portfolio() {
   return (
@@ -480,6 +481,7 @@ export default function Portfolio() {
       </footer>
 
       <ScrollProgress className="top-[65px]" />
+      <ChatbotProvider />
     </div>
   );
 }
