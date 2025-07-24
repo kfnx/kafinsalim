@@ -10,6 +10,8 @@ const openai = new OpenAI({
 
 let vectorStoreInstance: VectorStore | null = null;
 
+const RESUME_FILENAME = 'resume-2025.pdf'
+
 async function initializeVectorStore(): Promise<VectorStore> {
   if (vectorStoreInstance && vectorStoreInstance.getDocumentCount() > 0) {
     return vectorStoreInstance;
@@ -18,14 +20,15 @@ async function initializeVectorStore(): Promise<VectorStore> {
   vectorStoreInstance = new VectorStore();
   
   try {
-    const resumePath = path.join(process.cwd(), 'public', 'resume-2025.pdf');
+    const resumePath = path.join(process.cwd(), 'public', RESUME_FILENAME);
     const processedDoc = await processPDF(resumePath);
+    console.log("🚀 ~ initializeVectorStore ~ processedDoc:", processedDoc)
     
     const documents = processedDoc.chunks.map((chunk, index) => ({
       id: `resume-chunk-${index}`,
       text: chunk,
       metadata: {
-        source: 'resume-2025.pdf',
+        source: RESUME_FILENAME,
         chunkIndex: index,
         title: processedDoc.metadata.title
       }
