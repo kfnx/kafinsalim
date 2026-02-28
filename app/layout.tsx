@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { LenisProvider } from "@/components/lenis-provider";
 
 export const metadata: Metadata = {
   title: "Kafin Salim | Tech Lead & Fullstack Engineer",
@@ -14,7 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        <LenisProvider>{children}</LenisProvider>
+      </body>
     </html>
   );
 }
