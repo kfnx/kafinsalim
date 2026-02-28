@@ -4,9 +4,11 @@ import { processPDF } from '@/lib/pdf-processor';
 import { VectorStore } from '@/lib/embeddings';
 import OpenAI from 'openai';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+function getOpenAIClient() {
+  return new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+  });
+}
 
 let vectorStoreInstance: VectorStore | null = null;
 
@@ -83,7 +85,7 @@ Instructions:
 - Maintain a professional and friendly tone
 - If you don't have enough information to answer a question, politely explain what information is available`;
 
-    const completion = await openai.chat.completions.create({
+    const completion = await getOpenAIClient().chat.completions.create({
       model: 'gpt-3.5-turbo',
       messages: [
         { role: 'system', content: systemPrompt },
