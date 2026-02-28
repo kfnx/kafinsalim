@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Kafin Salim | Tech Lead & Fullstack Engineer",
   description:
-    "Tech Lead & Fullstack Engineer with 7+ years of experience building products. Currently leading engineering at Fokuslah.",
+    "Tech Lead & Fullstack Engineer with 8+ years of experience building products. Currently leading engineering at Fokuslah.",
 };
 
 export default function RootLayout({

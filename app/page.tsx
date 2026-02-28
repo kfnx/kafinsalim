@@ -21,19 +21,19 @@ const NAV_LINKS = [
 ];
 
 const STATS = [
-  "7+ Years Experience",
-  "5,000+ Users Served",
+  "8+ Years Experience",
+  "10,000+ Users Served",
   "$2M+ NFT Revenue Generated",
-  "3 Products Shipped to Production",
+  "12+ Products Shipped to Production",
 ];
 
 const EXPERIENCE = [
   {
-    period: "2024 -- Present",
+    period: "2025 -- Present",
     title: "Tech Lead",
     company: "Fokuslah",
     description:
-      "Leading engineering for an AI-powered SPM Math platform. Built the product from the ground up -- Next.js, PostgreSQL, FastAPI, LLM integration. 5,000+ users, 100-250 DAU.",
+      "Leading engineering for an AI-powered SPM Math platform. Built the product from the ground up -- Next.js, PostgreSQL, FastAPI, LLM integration. 10,000+ users, 100-250 DAU.",
   },
   {
     period: "Previous",
@@ -62,7 +62,7 @@ const PROJECTS = [
   {
     title: "Fokuslah.com",
     description:
-      "AI-powered education platform serving 5,000+ SPM Math students across Malaysia",
+      "AI-powered education platform serving 10,000+ SPM Math students across Malaysia",
     tags: ["Next.js", "PostgreSQL", "FastAPI", "AI/LLM"],
     url: "https://fokuslah.com",
   },
@@ -225,7 +225,7 @@ export default function Portfolio() {
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
             >
               Tech Lead & Fullstack Engineer · Building AI-powered education for
-              5,000+ students · 7+ years shipping products
+              10,000+ students · 8+ years shipping products
             </motion.p>
 
             <motion.div
